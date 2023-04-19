@@ -26,4 +26,4 @@ Password: admin#123
 http://localhost/hrm/user
 
 Email: sample@gmail.com
-Password: mcooper#123
+Password: sample#123
