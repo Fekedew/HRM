@@ -25,5 +25,5 @@ Password: admin#123
 ### Sample Employee Access:
 http://localhost/hrm/user
 
-Email: mcooper@gmail.com
+Email: sample@gmail.com
 Password: mcooper#123
