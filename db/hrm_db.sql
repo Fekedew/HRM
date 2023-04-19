@@ -116,7 +116,7 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`EmpId`, `EmployeeId`, `FirstName`, `MiddleName`, `LastName`, `Birthdate`, `Gender`, `Address1`, `Address2`, `Address3`, `CityId`, `Mobile`, `Email`, `Password`, `AadharNumber`, `MaritalStatus`, `PositionId`, `CreatedBy`, `CreatedDate`, `ModifiedBy`, `ModifiedDate`, `JoinDate`, `LeaveDate`, `LastLogin`, `LastLogout`, `StatusId`, `RoleId`, `ImageName`, `MacAddress`) VALUES
 (1, '1', 'admin', 'admin', 'admin', '1994-10-09', 1, 'address1', 'address2', 'address3', 1, '9999999999', 'admin@gmail.com', 'admin#123', '12354658496', 2, 1, 1, '2017-01-01 00:00:00', 1, '2017-01-31 10:33:33', '2017-01-11', '2017-01-18', '2022-10-10 09:10:42', '2017-02-09 15:12:09', 1, 1, 'images (2).jpg', ''),
-(2, '6231415', 'Mark', 'D', 'Cooper', '2022-10-10', 1, 'Sample Address 101', 'Sample Address 102', '', 22, '912345678', 'mcooper@mail.com', 'mcooper#123', '', 1, 2, 1, '2022-10-10 08:01:43', 1, '2022-10-10 08:05:39', '2022-10-10', '0000-00-00', '2022-10-10 08:55:27', '2022-10-10 08:55:05', 1, 3, '33615user.png', '');
+(2, '6231415', 'Fekedew', 'H', 'W', '2022-10-10', 1, 'Sample Address 101', 'Sample Address 102', '', 22, '912345678', 'sample@mail.com', 'sample#123', '', 1, 2, 1, '2022-10-10 08:01:43', 1, '2022-10-10 08:05:39', '2022-10-10', '0000-00-00', '2022-10-10 08:55:27', '2022-10-10 08:55:05', 1, 3, '33615user.png', '');
 
 -- --------------------------------------------------------
 
