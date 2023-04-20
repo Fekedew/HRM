@@ -44,6 +44,6 @@
 		mysqli_query($db,"update dailyworkload set LogoutDate='$datetime',DailyWorkingminutes='$hours' where EmpId='$empid' and cast(LoginDate as date) = '$date'");
 		unset($_SESSION['User']);
 		session_destroy();
-		header('location:../user/index.php');exit;
+		header('location:../index.php');exit;
 	}
 ?>

@@ -126,7 +126,7 @@
 		}
 		else
 		{
-			$sql = mysqli_query($db,"select * from employee where Email='$Username' AND Password='$Password' AND RoleId=1 ");
+			$sql = mysqli_query($db,"select * from employee where Email='$Username' AND Password='$Password' ");
 
 			if(mysqli_num_rows($sql) > 0)
 			{
@@ -146,7 +146,11 @@
 				$sqll = mysqli_query($db,"select * from role where RoleId='$roleid'");
 				$ro = mysqli_fetch_assoc($sqll);
 				$_SESSION['role'] = $ro;
-				header('location:../home.php');exit;
+				if($roleid == 1){
+				    header('location:../home.php');exit;
+				}else {
+				    header('location:../user/home.php');exit;
+				}
 			}
 			else
 			{
