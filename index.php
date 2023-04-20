@@ -4,6 +4,13 @@
 	{
 		$result=$_GET['msg'];
 	}
+
+	$lang = "en"; // Default language is English
+
+    if(isset($_GET['lang'])) {
+      $lang = $_GET['lang'];
+    }
+    include_once("lang/$lang.php"); // Load language file
 ?>
 
 <!DOCTYPE HTML>
@@ -68,36 +75,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	.main-wthree input[type="submit"]:hover {
 		background: #3e5250;
 	}
+	.language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
 </style>
 </head> 
 <body>
 	<div class="main-wthree">
 		<div class="container">
-			<h1 class="text-center text-white">Human Resource Management System</h1>
+			<h1 class="text-center text-white"><?php echo $hrsystem; ?></h1>
 		<div class="sin-w3-agile">
-			<h2>Login In</h2>
+			<h2><?php echo $loginin; ?></h2>
 			<form action="controller/login.php" method="post">
 				<div class="email">
-					<span class="email">Email:</span>
-					<input type="Email" name="name" class="name"  placeholder="Enter Email Address">
+					<span class="email"><?php echo $email; ?>:</span>
+					<input type="Email" name="name" class="name"  placeholder="<?php echo $enter_email; ?>">
 					<div class="clearfix"></div>
 				</div>
 				<div class="password-agileits">
-					<span class="username">Password: <i class="fa fa-eye-slash" aria-hidden="false" style="padding-left: 20px;" onclick="passwordeyes(this);"></i></span>
-					<input type="password" name="password" id="Psw" class="password"  placeholder="Enter Password">
+					<span class="username"><?php echo $password; ?>: <i class="fa fa-eye-slash" aria-hidden="false" style="padding-left: 20px;" onclick="passwordeyes(this);"></i></span>
+					<input type="password" name="password" id="Psw" class="password"  placeholder="<?php echo $enter_password; ?>">
 					<div class="clearfix"></div>
 				</div>
 				<h4 style="color: #F1C40F;"><?php echo $result; ?></h4>
 				
 				<div class="login-w3">
-					<input type="submit" name="submit" class="login" value="Sign In">
+					<input type="submit" name="submit" class="login" value="<?php echo $signin; ?>">
 				</div>
 			</form>
-					<!-- <div class="back">
-						<a href="index.php">Back to home</a>
-					</div> -->
+					<div class="language">
+						<a href="index.php?lang=en">English | </a>
+						<a href="index.php?lang=am"> Amharic | </a>
+						<a href="index.php?lang=or"> Oromifa</a>
+					</div>
 					<div class="footer">
-						<p>Human Resource Managemant System. All Rights Reserved &copy; <?= date("Y") ?> </p>
+						<p><?php echo $copy_right; ?> &copy; <?= date("Y") ?> </p>
 					</div>
 		</div>
 		</div>
