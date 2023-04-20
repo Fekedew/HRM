@@ -23,7 +23,6 @@ Email: admin@gmail.com
 Password: admin#123
 
 ### Sample Employee Access:
-http://localhost/hrm/user
 
-Email: sample@gmail.com
-Password: sample#123
+Email: demo@gmail.com
+Password: demo
