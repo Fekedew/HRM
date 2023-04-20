@@ -92,9 +92,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="login-w3">
 					<input type="submit" name="submit" class="login" value="Sign In">
 				</div>
-				<div class="clearfix"></div>
-				<h5 class="text-center"><a href="./user" class="text-white" >Login as an Employee</a></h5>
-				<div class="clearfix"></div>
 			</form>
 					<!-- <div class="back">
 						<a href="index.php">Back to home</a>

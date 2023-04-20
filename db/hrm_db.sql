@@ -1,15 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 05:45 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.5
+-- Host: localhost
+-- Generation Time: Apr 20, 2023 at 08:57 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `hrm_db`
@@ -32,12 +38,9 @@ CREATE TABLE `city` (
 --
 
 INSERT INTO `city` (`CityId`, `StateId`, `Name`) VALUES
-(1, 1, 'Sample 101'),
-(2, 1, 'Sample 102'),
-(21, 1, 'Manila'),
-(22, 1, 'Muntinlupa'),
-(23, 4, 'Los Angeles'),
-(24, 3, 'Washington');
+(26, 1, 'Bahirdar'),
+(27, 2, 'Nazrit'),
+(28, 3, 'Mekele');
 
 -- --------------------------------------------------------
 
@@ -55,8 +58,7 @@ CREATE TABLE `country` (
 --
 
 INSERT INTO `country` (`CountryId`, `Name`) VALUES
-(1, 'Philippines'),
-(9, 'USA');
+(11, 'Ethiopia');
 
 -- --------------------------------------------------------
 
@@ -71,6 +73,17 @@ CREATE TABLE `dailyworkload` (
   `LogoutDate` datetime DEFAULT NULL,
   `DailyWorkingminutes` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dailyworkload`
+--
+
+INSERT INTO `dailyworkload` (`DailyWorkLoadId`, `EmpId`, `LoginDate`, `LogoutDate`, `DailyWorkingminutes`) VALUES
+(1, '1', '2023-04-03 14:01:23', NULL, NULL),
+(2, '124123', '2023-04-03 14:07:32', '2023-04-03 14:08:03', 28008518),
+(3, '1', '2023-04-19 23:35:25', NULL, NULL),
+(4, '124123', '2023-04-19 23:36:11', NULL, NULL),
+(5, '1', '2023-04-20 11:56:21', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -115,8 +128,8 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`EmpId`, `EmployeeId`, `FirstName`, `MiddleName`, `LastName`, `Birthdate`, `Gender`, `Address1`, `Address2`, `Address3`, `CityId`, `Mobile`, `Email`, `Password`, `AadharNumber`, `MaritalStatus`, `PositionId`, `CreatedBy`, `CreatedDate`, `ModifiedBy`, `ModifiedDate`, `JoinDate`, `LeaveDate`, `LastLogin`, `LastLogout`, `StatusId`, `RoleId`, `ImageName`, `MacAddress`) VALUES
-(1, '1', 'admin', 'admin', 'admin', '1994-10-09', 1, 'address1', 'address2', 'address3', 1, '9999999999', 'admin@gmail.com', 'admin#123', '12354658496', 2, 1, 1, '2017-01-01 00:00:00', 1, '2017-01-31 10:33:33', '2017-01-11', '2017-01-18', '2022-10-10 09:10:42', '2017-02-09 15:12:09', 1, 1, 'images (2).jpg', ''),
-(2, '6231415', 'Fekedew', 'H', 'W', '2022-10-10', 1, 'Sample Address 101', 'Sample Address 102', '', 22, '912345678', 'sample@mail.com', 'sample#123', '', 1, 2, 1, '2022-10-10 08:01:43', 1, '2022-10-10 08:05:39', '2022-10-10', '0000-00-00', '2022-10-10 08:55:27', '2022-10-10 08:55:05', 1, 3, '33615user.png', '');
+(1, '1', 'admin', 'admin', 'admin', '1994-10-09', 1, 'address1', 'address2', 'address3', 1, '9999999999', 'admin@gmail.com', 'admin#123', '12354658496', 2, 1, 1, '2017-01-01 00:00:00', 1, '2017-01-31 10:33:33', '2017-01-11', '2017-01-18', '2023-04-21 00:21:26', '2017-02-09 15:12:09', 1, 1, 'images (2).jpg', ''),
+(3, '124123', 'Fekedew', 'Hailemariam', 'Wagayelew', '1999-04-15', 1, 'Address line 1', 'Address line 2', '', 23, '2332432423', 'demo@gmail.com', 'demo', '', 1, 2, 1, '2023-04-03 02:06:55', NULL, NULL, '2023-04-12', '2023-04-20', '2023-04-19 23:36:11', '2023-04-03 14:08:03', 1, 2, '268228photo_2023-03-15 3.41.53 PM.jpeg', '');
 
 -- --------------------------------------------------------
 
@@ -176,7 +189,8 @@ CREATE TABLE `leavedetails` (
 --
 
 INSERT INTO `leavedetails` (`Detail_Id`, `EmpId`, `TypesLeaveId`, `Reason`, `StateDate`, `EndDate`, `LeaveStatus`) VALUES
-(1, 6231415, 3, 'Sample Reason', '2022-10-12', '2022-10-14', 'Accept');
+(1, 6231415, 3, 'Sample Reason', '2022-10-12', '2022-10-14', 'Accept'),
+(2, 124123, 3, 'The reason', '2023-04-03', '2023-04-12', 'Accept');
 
 -- --------------------------------------------------------
 
@@ -254,10 +268,11 @@ CREATE TABLE `state` (
 --
 
 INSERT INTO `state` (`StateId`, `CountryId`, `Name`) VALUES
-(1, 1, 'Metro Manila'),
-(2, 1, 'Negros Oriental'),
-(3, 9, 'DC'),
-(4, 9, 'California');
+(1, 1, 'Amhara'),
+(2, 1, 'Oromia'),
+(3, 9, 'Tigray'),
+(4, 9, 'Afar'),
+(6, 11, 'Somalia');
 
 -- --------------------------------------------------------
 
@@ -391,25 +406,25 @@ ALTER TABLE `type_of_leave`
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `CityId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `CityId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `CountryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `CountryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `dailyworkload`
 --
 ALTER TABLE `dailyworkload`
-  MODIFY `DailyWorkLoadId` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `DailyWorkLoadId` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `EmpId` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `EmpId` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gender`
@@ -427,7 +442,7 @@ ALTER TABLE `leavedays`
 -- AUTO_INCREMENT for table `leavedetails`
 --
 ALTER TABLE `leavedetails`
-  MODIFY `Detail_Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Detail_Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `position`
@@ -439,7 +454,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT for table `state`
 --
 ALTER TABLE `state`
-  MODIFY `StateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `StateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `type_of_leave`
@@ -447,3 +462,7 @@ ALTER TABLE `state`
 ALTER TABLE `type_of_leave`
   MODIFY `LeaveId` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
